@@ -9,14 +9,15 @@ struct SYM {
 };
 template <typename T>
 class TPQueue {
-private:
+ private:
   struct Node {
     T data;
     explicit Node(const T& data) : data(data), next(nullptr) {}
     Node* next;
   };
   Node* head;
-public:
+
+ public:
   TPQueue() : head(nullptr) {}
   bool isEmpty() const {
     return head == nullptr;
@@ -26,8 +27,7 @@ public:
     if (!head || head->data.prior < arg.prior) {
       temp->next = head;
       head = temp;
-    }
-    else {
+    } else {
       Node* cur = head;
       while (cur->next && cur->next->data.prior >= arg.prior) {
         cur = cur->next;
