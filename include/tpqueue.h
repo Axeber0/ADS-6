@@ -35,15 +35,16 @@ public:
       temp->next = cur->next;
       cur->next = temp;
     }
-    T pop() {
-      if (!head) {
-        throw std::underflow_error("Stack is empty");
-      }
-      Node* cur2 = head;
-      T val = head->data;
-      head = head->next;
-      delete cur2;
-      return val;
+  }
+  T pop() {
+    if (!head) {
+      throw std::underflow_error("Stack is empty");
+    }
+    Node* cur2 = head;
+    T val = head->data;
+    head = head->next;
+    delete cur2;
+    return val;
     }
   }
 };
