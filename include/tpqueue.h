@@ -45,7 +45,6 @@ public:
     head = head->next;
     delete cur2;
     return val;
-    }
   }
 };
 #endif  // INCLUDE_TPQUEUE_H_
